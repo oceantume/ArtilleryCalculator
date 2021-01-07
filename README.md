@@ -14,4 +14,5 @@ If you find a bug or want to suggest a feature, please use the Github issues sys
 
 ## Credits
 Application developed by me, Oceantume.
-Thank you to the [Hell Let Loose Training Camp](https://www.hlltrainingcamp.com/) guys for your feedback and sharing the distance to elevation formula.
+
+A big thank you to [Hell Let Loose Training Camp](https://www.hlltrainingcamp.com/) guys for your feedback, for sharing the distance to elevation formula and for being awesome!
