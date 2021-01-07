@@ -13,10 +13,8 @@ namespace ArtilleryCalculator
         public CalculatorForm()
         {
             InitializeComponent();
-        }
 
-        private void CalculatorForm_Load(object sender, EventArgs e)
-        {
+            Icon = System.Drawing.Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             enableNumpadCheckbox.Checked = Properties.Settings.Default.EnableNumpadListener;
             stayOnTopCheckbox.Checked = Properties.Settings.Default.StayOnTop;
         }

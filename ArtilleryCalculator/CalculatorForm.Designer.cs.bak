@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalculatorForm));
             this.enableNumpadCheckbox = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -148,9 +149,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.enableNumpadCheckbox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CalculatorForm";
-            this.Text = "Artillery Calculator";
+            this.Text = "HLL Artillery Calculator";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CalculatorForm_FormClosing);
+            this.Load += new System.EventHandler(this.CalculatorForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.distanceInput)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.elevationInput)).EndInit();
             this.ResumeLayout(false);

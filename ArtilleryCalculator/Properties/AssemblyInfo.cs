@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ArtilleryCalculator")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Artillery Calculator")]
+[assembly: AssemblyDescription("Artillery calculator that runs on your desktop")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ArtilleryCalculator")]
-[assembly: AssemblyCopyright("Copyright ©  2021")]
+[assembly: AssemblyProduct("Artillery Calculator")]
+[assembly: AssemblyCopyright("Copyright © Gabriel Bourgeois 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
