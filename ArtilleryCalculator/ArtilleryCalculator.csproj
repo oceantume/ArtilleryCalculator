@@ -90,6 +90,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArtilleryTimingCalculator.cs" />
+    <Compile Include="BaseWindowsHookListener.cs" />
     <Compile Include="DistanceElevationConverter.cs" />
     <Compile Include="CalculatorForm.cs">
       <SubType>Form</SubType>
@@ -97,6 +99,7 @@
     <Compile Include="CalculatorForm.Designer.cs">
       <DependentUpon>CalculatorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClickListener.cs" />
     <Compile Include="NumpadListener.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
