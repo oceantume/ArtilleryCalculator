@@ -6,9 +6,15 @@ namespace ArtilleryCalculator
     public partial class CalculatorForm : Form
     {
         DistanceElevationConverter Converter { get; } = new DistanceElevationConverter();
+        ArtilleryTimingCalculator TimingCalculator { get; } = new ArtilleryTimingCalculator();
+
         NumpadListener NumpadListener { get; set; } = null;
+        ClickListener ClickListener { get; set; } = null;
 
         DateTime LastNumpadInputAt { get; set; } = DateTime.MinValue;
+        DateTime LastClickAt { get; set; } = DateTime.MinValue;
+
+        Timer ClickTimerUpdateTimer { get; set; }
 
         public CalculatorForm()
         {
@@ -17,6 +23,7 @@ namespace ArtilleryCalculator
             Icon = System.Drawing.Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             enableNumpadCheckbox.Checked = Properties.Settings.Default.EnableNumpadListener;
             stayOnTopCheckbox.Checked = Properties.Settings.Default.StayOnTop;
+            enableClickTimerCheckbox.Checked = Properties.Settings.Default.EnableClickTimer;
         }
 
         private void CalculatorForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -40,6 +47,42 @@ namespace ArtilleryCalculator
             {
                 NumpadListener.Dispose();
                 NumpadListener = null;
+            }
+        }
+
+        private void enableClickTimerCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateClickListener();
+            UpdateClickTimerControls();
+        }
+
+        private void UpdateClickListener()
+        {
+            var enabled = Properties.Settings.Default.EnableClickTimer = enableClickTimerCheckbox.Checked;
+            if (enabled && ClickListener == null)
+            {
+                ClickListener = new ClickListener() { Callback = ReceiveClick };
+            }
+            else if (!enabled && ClickListener != null)
+            {
+                ClickListener.Dispose();
+                ClickListener = null;
+            }
+        }
+
+        private void UpdateClickTimerControls()
+        {
+            if (enableClickTimerCheckbox.Checked)
+            {
+                clickTimerUpdateTimer.Start();
+                lastHitLabel.Show();
+                lastHitCountdownLabel.Show();
+            }
+            else
+            {
+                clickTimerUpdateTimer.Stop();
+                lastHitLabel.Hide();
+                lastHitCountdownLabel.Hide();
             }
         }
 
@@ -74,6 +117,27 @@ namespace ArtilleryCalculator
             }
 
             LastNumpadInputAt = DateTime.Now;
+        }
+
+        private void clickTimerUpdateTimer_Tick(object sender, EventArgs e)
+        {
+            var hitTimePrediction = TimingCalculator.PredictHitTime(LastClickAt);
+            var timeUntilHit = hitTimePrediction- DateTime.Now;
+            var remainingSeconds = Math.Round(timeUntilHit.TotalSeconds);
+
+            if (remainingSeconds < 0)
+            {
+                lastHitCountdownLabel.Text = "";
+            }
+            else
+            {
+                lastHitCountdownLabel.Text = remainingSeconds.ToString();
+            }
+        }
+
+        private void ReceiveClick()
+        {
+            LastClickAt = DateTime.Now;
         }
     }
 }
