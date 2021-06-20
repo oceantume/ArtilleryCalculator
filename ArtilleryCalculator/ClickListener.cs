@@ -18,7 +18,7 @@ namespace ArtilleryCalculator
         {
             if (code >= 0 && wParam == (IntPtr)Native.WM_LBUTTONDOWN)
             {
-                Callback();
+                Callback?.Invoke();
             }
         }
     }
