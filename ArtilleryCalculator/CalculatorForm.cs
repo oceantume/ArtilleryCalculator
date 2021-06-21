@@ -14,8 +14,6 @@ namespace ArtilleryCalculator
         DateTime LastNumpadInputAt { get; set; } = DateTime.MinValue;
         DateTime LastClickAt { get; set; } = DateTime.MinValue;
 
-        Timer ClickTimerUpdateTimer { get; set; }
-
         public CalculatorForm()
         {
             InitializeComponent();
