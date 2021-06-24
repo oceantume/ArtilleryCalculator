@@ -2,7 +2,7 @@
 
 This is a simple artillery calculator for [Hell Let Loose](https://www.hellletloose.com/) that runs on your desktop. By running on the desktop, this tool is able to use [Windows hooks](https://docs.microsoft.com/en-us/windows/win32/winmsg/hooks) to monitor keyboard input. This allows you to quickly calculate the elevation for a given distance without alt-tabbing out of the game.
 
-![image](https://user-images.githubusercontent.com/1060971/117716726-f1d73600-b1a7-11eb-83ee-3f12d7153f5b.png)
+![image](https://user-images.githubusercontent.com/1060971/123190444-8a322d00-d46d-11eb-8be6-b2c2f86d3299.png)
 
 More information and screenshots here: https://www.hlltrainingcamp.com/forums/hell-let-loose/artillery-calculator-desktop-application
 
