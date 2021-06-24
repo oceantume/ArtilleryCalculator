@@ -82,6 +82,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -168,15 +176,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Artillery Calculator"
-        "ProductCode" = "8:{9A36C4CA-DD63-468B-BC53-552E51224AB1}"
-        "PackageCode" = "8:{D1E36B7D-04C9-4B5F-9D86-84CE8569201A}"
+        "ProductCode" = "8:{E2803792-3320-4EA6-B2DF-CD8B322FEA2A}"
+        "PackageCode" = "8:{3524B78F-6059-4C1A-AEAD-638B4670BF99}"
         "UpgradeCode" = "8:{1C252E00-F8E4-4326-A649-F696B9971F77}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
-        "RemovePreviousVersions" = "11:FALSE"
+        "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.1.0"
         "Manufacturer" = "8:Oceantume"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:https://github.com/oceantume/ArtilleryCalculator/issues"
@@ -291,7 +299,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_91B6B846C0C84AFC90E1682AE35D508F"
             {
-            "Name" = "8:ArtilleryCalculator"
+            "Name" = "8:Artillery Calculator"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
