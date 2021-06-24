@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Http;
 using System.Windows.Forms;
 
 namespace ArtilleryCalculator
@@ -14,7 +15,7 @@ namespace ArtilleryCalculator
         DateTime LastNumpadInputAt { get; set; } = DateTime.MinValue;
         DateTime LastClickAt { get; set; } = DateTime.MinValue;
 
-        public CalculatorForm()
+        public CalculatorForm(HttpClient client)
         {
             InitializeComponent();
 
@@ -22,6 +23,9 @@ namespace ArtilleryCalculator
             enableNumpadCheckbox.Checked = Properties.Settings.Default.EnableNumpadListener;
             stayOnTopCheckbox.Checked = Properties.Settings.Default.StayOnTop;
             enableClickTimerCheckbox.Checked = Properties.Settings.Default.EnableClickTimer;
+
+            var updateChecker = new UpdateChecker(client);
+            updateChecker.InitializeUpdateChecking();
         }
 
         private void CalculatorForm_FormClosing(object sender, FormClosingEventArgs e)

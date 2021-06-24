@@ -58,5 +58,41 @@ namespace ArtilleryCalculator.Properties {
                 this["EnableClickTimer"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LastIgnoredVersion {
+            get {
+                return ((string)(this["LastIgnoredVersion"]));
+            }
+            set {
+                this["LastIgnoredVersion"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool HasSelectedCheckForUpdatesPreference {
+            get {
+                return ((bool)(this["HasSelectedCheckForUpdatesPreference"]));
+            }
+            set {
+                this["HasSelectedCheckForUpdatesPreference"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ShouldCheckForUpdates {
+            get {
+                return ((bool)(this["ShouldCheckForUpdates"]));
+            }
+            set {
+                this["ShouldCheckForUpdates"] = value;
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Http;
 using System.Windows.Forms;
 
 namespace ArtilleryCalculator
@@ -11,9 +12,11 @@ namespace ArtilleryCalculator
         [STAThread]
         static void Main()
         {
+            var httpClient = new HttpClient();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CalculatorForm());
+            Application.Run(new CalculatorForm(httpClient));
         }
     }
 }
