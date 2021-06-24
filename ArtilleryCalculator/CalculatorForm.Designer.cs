@@ -194,6 +194,7 @@
             this.Controls.Add(this.enableClickTimerCheckbox);
             this.Controls.Add(this.enableNumpadCheckbox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "CalculatorForm";
             this.Text = "Artillery Calculator";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CalculatorForm_FormClosing);
