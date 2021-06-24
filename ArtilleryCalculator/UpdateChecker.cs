@@ -59,7 +59,7 @@ namespace ArtilleryCalculator
                     {
                         if (!IsVersionAlreadyIgnored(info.Version))
                         {
-                            PromptUserToUpdateIfNotIgnored(info);
+                            PromptUserToUpdate(info);
                         }
                     }), null);
                 }
@@ -72,7 +72,7 @@ namespace ArtilleryCalculator
             return !string.IsNullOrEmpty(lastIgnoredVersion) || lastIgnoredVersion == version;
         }
 
-        void PromptUserToUpdateIfNotIgnored(ArtilleryCalculatorApiClient.LatestVersionInformation info)
+        void PromptUserToUpdate(ArtilleryCalculatorApiClient.LatestVersionInformation info)
         {
             var caption = info.Name;
             var text = $"A new version of Artillery Calculator is available. Do you want to open your browser to download it now?\r\n\r\nIf you select no, you won't be reminded until the next release.";
