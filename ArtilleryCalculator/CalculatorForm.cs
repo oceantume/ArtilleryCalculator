@@ -6,7 +6,7 @@ namespace ArtilleryCalculator
 {
     public partial class CalculatorForm : Form
     {
-        DistanceElevationConverter Converter { get; } = new DistanceElevationConverter();
+        IDistanceElevationConverter Converter { get; set; } = new DistanceElevationConverter();
         ArtilleryTimingCalculator TimingCalculator { get; } = new ArtilleryTimingCalculator();
 
         NumpadListener NumpadListener { get; set; } = null;
@@ -23,6 +23,7 @@ namespace ArtilleryCalculator
             enableNumpadCheckbox.Checked = Properties.Settings.Default.EnableNumpadListener;
             stayOnTopCheckbox.Checked = Properties.Settings.Default.StayOnTop;
             enableClickTimerCheckbox.Checked = Properties.Settings.Default.EnableClickTimer;
+            enableRussiaConversion.Checked = Properties.Settings.Default.EnableRussiaConversion;
 
             var updateChecker = new UpdateChecker(client);
             updateChecker.InitializeUpdateChecking();
@@ -91,6 +92,19 @@ namespace ArtilleryCalculator
         private void stayOnTopCheckbox_CheckedChanged(object sender, EventArgs e)
         {
             TopMost = Properties.Settings.Default.StayOnTop = stayOnTopCheckbox.Checked;
+        }
+
+        private void enableRussiaConversion_CheckedChanged(object sender, EventArgs e)
+        {
+            var russiaConversion = Properties.Settings.Default.EnableRussiaConversion = enableRussiaConversion.Checked;
+            if (russiaConversion)
+            {
+                Converter = new RusDistanceElevationConverter();
+            }
+            else
+            {
+                Converter = new DistanceElevationConverter();
+            }
         }
 
         private void distanceInput_ValueChanged(object sender, EventArgs e)

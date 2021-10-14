@@ -40,6 +40,7 @@
             this.lastHitLabel = new System.Windows.Forms.Label();
             this.lastHitCountdownLabel = new System.Windows.Forms.Label();
             this.clickTimerUpdateTimer = new System.Windows.Forms.Timer(this.components);
+            this.enableRussiaConversion = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.distanceInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.elevationInput)).BeginInit();
             this.SuspendLayout();
@@ -178,11 +179,23 @@
             this.clickTimerUpdateTimer.Interval = 250;
             this.clickTimerUpdateTimer.Tick += new System.EventHandler(this.clickTimerUpdateTimer_Tick);
             // 
+            // enableRussiaConversion
+            // 
+            this.enableRussiaConversion.AutoSize = true;
+            this.enableRussiaConversion.Location = new System.Drawing.Point(339, 5);
+            this.enableRussiaConversion.Name = "enableRussiaConversion";
+            this.enableRussiaConversion.Size = new System.Drawing.Size(42, 17);
+            this.enableRussiaConversion.TabIndex = 11;
+            this.enableRussiaConversion.Text = "RU";
+            this.enableRussiaConversion.UseVisualStyleBackColor = true;
+            this.enableRussiaConversion.CheckedChanged += new System.EventHandler(this.enableRussiaConversion_CheckedChanged);
+            // 
             // CalculatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 72);
+            this.ClientSize = new System.Drawing.Size(382, 72);
+            this.Controls.Add(this.enableRussiaConversion);
             this.Controls.Add(this.lastHitCountdownLabel);
             this.Controls.Add(this.lastHitLabel);
             this.Controls.Add(this.stayOnTopCheckbox);
@@ -217,6 +230,7 @@
         private System.Windows.Forms.Label lastHitLabel;
         private System.Windows.Forms.Label lastHitCountdownLabel;
         private System.Windows.Forms.Timer clickTimerUpdateTimer;
+        private System.Windows.Forms.CheckBox enableRussiaConversion;
     }
 }
 

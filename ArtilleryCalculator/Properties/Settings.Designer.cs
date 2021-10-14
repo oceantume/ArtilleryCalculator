@@ -94,5 +94,17 @@ namespace ArtilleryCalculator.Properties {
                 this["ShouldCheckForUpdates"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool EnableRussiaConversion {
+            get {
+                return ((bool)(this["EnableRussiaConversion"]));
+            }
+            set {
+                this["EnableRussiaConversion"] = value;
+            }
+        }
     }
 }

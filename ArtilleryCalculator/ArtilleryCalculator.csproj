@@ -96,6 +96,7 @@
   <ItemGroup>
     <Compile Include="ArtilleryTimingCalculator.cs" />
     <Compile Include="BaseWindowsHookListener.cs" />
+    <Compile Include="RusDistanceElevationConverter.cs" />
     <Compile Include="DistanceElevationConverter.cs" />
     <Compile Include="CalculatorForm.cs">
       <SubType>Form</SubType>
@@ -105,6 +106,7 @@
     </Compile>
     <Compile Include="ClickListener.cs" />
     <Compile Include="ArtilleryCalculatorApiClient.cs" />
+    <Compile Include="IDistanceElevationConverter.cs" />
     <Compile Include="NumpadListener.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
