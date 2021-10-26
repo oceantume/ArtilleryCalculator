@@ -110,6 +110,8 @@
     <Compile Include="NumpadListener.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransparencyHotkeyListener.cs" />
+    <Compile Include="TransparencyManager.cs" />
     <Compile Include="UpdateChecker.cs" />
     <EmbeddedResource Include="CalculatorForm.resx">
       <DependentUpon>CalculatorForm.cs</DependentUpon>

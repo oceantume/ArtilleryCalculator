@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Http;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace ArtilleryCalculator
@@ -11,6 +12,8 @@ namespace ArtilleryCalculator
 
         NumpadListener NumpadListener { get; set; } = null;
         ClickListener ClickListener { get; set; } = null;
+        TransparencyHotkeyListener TransparencyListener { get; }
+        TransparencyManager TransparencyManager { get; }
 
         DateTime LastNumpadInputAt { get; set; } = DateTime.MinValue;
         DateTime LastClickAt { get; set; } = DateTime.MinValue;
@@ -27,6 +30,12 @@ namespace ArtilleryCalculator
 
             var updateChecker = new UpdateChecker(client);
             updateChecker.InitializeUpdateChecking();
+
+            TransparencyManager = new TransparencyManager(this);
+            TransparencyListener = new TransparencyHotkeyListener()
+            {
+                Callback = () => transparentCheckbox.Checked = !transparentCheckbox.Checked
+            };
         }
 
         private void CalculatorForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -138,7 +147,7 @@ namespace ArtilleryCalculator
         private void clickTimerUpdateTimer_Tick(object sender, EventArgs e)
         {
             var hitTimePrediction = TimingCalculator.PredictHitTime(LastClickAt);
-            var timeUntilHit = hitTimePrediction- DateTime.Now;
+            var timeUntilHit = hitTimePrediction - DateTime.Now;
             var remainingSeconds = Math.Round(timeUntilHit.TotalSeconds);
 
             if (remainingSeconds < 0)
@@ -154,6 +163,17 @@ namespace ArtilleryCalculator
         private void ReceiveClick()
         {
             LastClickAt = DateTime.Now;
+        }
+
+        private void transparentCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            TransparencyManager.EnableTransparency = transparentCheckbox.Checked;
+        }
+
+        private void CalculatorForm_Activated(object sender, EventArgs e)
+        {
+            if (transparentCheckbox.Checked)
+                transparentCheckbox.Checked = false;
         }
     }
 }
